@@ -176,6 +176,16 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/49abc5fdd7.js"></script>
+    <script>
+        $("#my-form").submit(function (e) {
+            e.preventDefault();
+
+            var $form = $(this);
+            $.post($form.attr("action"), $form.serialize()).then(function () {
+                alert("Thank you!");
+            });
+        });
+    </script>
 </body>
 
 </html>
